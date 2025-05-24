@@ -9,7 +9,18 @@ import {
   Search,
   PlusCircle,
   Menu,
-  MoreHorizontal
+  MoreHorizontal,
+  Layers,
+  List,
+  Type,
+  Columns,
+  Image,
+  Sliders,
+  HelpCircle,
+  MessageSquare,
+  Link as LinkIcon,
+  Palette,
+  Monitor
 } from 'lucide-react';
 import { useAuthStore } from '../../store/authStore';
 
@@ -120,52 +131,131 @@ const Sidebar: React.FC = () => {
           mobileMenuOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'
         }`}
       >
-        <UserProfile />
-        
-        <nav className="mt-4">
-          <SidebarItem 
-            to="/home" 
-            icon={<Home />} 
-            label="Home" 
-            active={isActive('/home')}
-            onClick={() => setMobileMenuOpen(false)}
-          />
+        <div className="flex flex-col h-screen">
+          <UserProfile />
           
-          <SidebarGroup 
-            icon={<Users />} 
-            label="Employee" 
-            defaultOpen={location.pathname.includes('/employee')}
-          >
+          <nav className="flex-1 overflow-y-auto scrollbar-thin scrollbar-thumb-gray-600 scrollbar-track-gray-800">
             <SidebarItem 
-              to="/employee/create" 
-              icon={<PlusCircle size={18} />} 
-              label="Create" 
-              active={isActive('/employee/create')}
+              to="/home" 
+              icon={<Home />} 
+              label="Home" 
+              active={isActive('/home')}
               onClick={() => setMobileMenuOpen(false)}
             />
-            <SidebarItem 
-              to="/employee/search" 
-              icon={<Search size={18} />} 
-              label="Search" 
-              active={isActive('/employee/search')}
-              onClick={() => setMobileMenuOpen(false)}
-            />
-          </SidebarGroup>
-          
-          <SidebarGroup 
-            icon={<MoreHorizontal />} 
-            label="More"
-          >
-            {/* Add more items as needed */}
-          </SidebarGroup>
-          
-          <SidebarGroup 
-            icon={<Settings />} 
-            label="Settings"
-          >
-            {/* Settings items */}
-          </SidebarGroup>
-        </nav>
+            
+            <SidebarGroup 
+              icon={<Users />} 
+              label="Employee" 
+              defaultOpen={location.pathname.includes('/employee')}
+            >
+              <SidebarItem 
+                to="/employee/create" 
+                icon={<PlusCircle size={18} />} 
+                label="Create" 
+                active={isActive('/employee/create')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/employee/search" 
+                icon={<Search size={18} />} 
+                label="Search" 
+                active={isActive('/employee/search')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+            </SidebarGroup>
+            
+            <SidebarGroup 
+              icon={<MoreHorizontal />} 
+              label="More"
+              defaultOpen={location.pathname.includes('/more')}
+            >
+              <SidebarItem 
+                to="/more/multiple-tabs" 
+                icon={<Layers size={18} />} 
+                label="Multiple Tabs" 
+                active={isActive('/more/multiple-tabs')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/menu" 
+                icon={<List size={18} />} 
+                label="Menu" 
+                active={isActive('/more/menu')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/autocomplete" 
+                icon={<Type size={18} />} 
+                label="Autocomplete" 
+                active={isActive('/more/autocomplete')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/collapsible" 
+                icon={<Columns size={18} />} 
+                label="Collapsible Content" 
+                active={isActive('/more/collapsible')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/images" 
+                icon={<Image size={18} />} 
+                label="Images" 
+                active={isActive('/more/images')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/slider" 
+                icon={<Sliders size={18} />} 
+                label="Slider" 
+                active={isActive('/more/slider')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/tooltips" 
+                icon={<HelpCircle size={18} />} 
+                label="Tooltips" 
+                active={isActive('/more/tooltips')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/popups" 
+                icon={<MessageSquare size={18} />} 
+                label="Popups" 
+                active={isActive('/more/popups')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/links" 
+                icon={<LinkIcon size={18} />} 
+                label="Links" 
+                active={isActive('/more/links')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/css-properties" 
+                icon={<Palette size={18} />} 
+                label="CSS Properties" 
+                active={isActive('/more/css-properties')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+              <SidebarItem 
+                to="/more/iframes" 
+                icon={<Monitor size={18} />} 
+                label="iFrames" 
+                active={isActive('/more/iframes')}
+                onClick={() => setMobileMenuOpen(false)}
+              />
+            </SidebarGroup>
+            
+            <SidebarGroup 
+              icon={<Settings />} 
+              label="Settings"
+            >
+              {/* Settings items */}
+            </SidebarGroup>
+          </nav>
+        </div>
       </div>
       
       {/* Overlay for mobile */}
