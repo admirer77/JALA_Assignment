@@ -33,9 +33,9 @@ const Links: React.FC = () => {
               <h3 className="font-medium mb-2">Image Links</h3>
               <a href="#" className="inline-block">
                 <img 
-                  src="https://en.wikipedia.org/wiki/File:020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg" 
-                  alt="Placeholder" 
-                  className="rounded hover:opacity-80 transition-opacity"
+                  src="https://upload.wikimedia.org/wikipedia/commons/0/02/020_The_lion_king_Snyggve_in_the_Serengeti_National_Park_Photo_by_Giles_Laurent.jpg" 
+                  alt="Lion in Serengeti"
+                  className="rounded hover:opacity-80 transition-opacity w-64 h-auto"
                 />
               </a>
             </div>
