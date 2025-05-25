@@ -79,10 +79,15 @@ export const useAuthStore = create<AuthState>((set) => ({
   
   logout: async () => {
     try {
-      set({ isLoading: true });
+      set({ isLoading: true, error: null });
       const { error } = await supabase.auth.signOut();
       if (error) throw error;
-      set({ user: null, isLoading: false });
+      
+      // Clear the user state immediately after successful logout
+      set({ user: null, isLoading: false, error: null });
+      
+      // Force a page reload to clear any cached state
+      window.location.href = '/';
     } catch (error: any) {
       set({ error: error.message, isLoading: false });
     }
