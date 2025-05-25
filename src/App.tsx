@@ -17,6 +17,11 @@ import CreateEmployee from './pages/employee/CreateEmployee';
 import SearchEmployee from './pages/employee/SearchEmployee';
 
 // More Pages
+import MultipleTabs from './pages/more/MultipleTabs';
+import Menu from './pages/more/Menu';
+import Autocomplete from './pages/more/Autocomplete';
+import Images from './pages/more/Images';
+import Slider from './pages/more/Slider';
 import CollapsibleContent from './pages/more/CollapsibleContent';
 import Tooltips from './pages/more/Tooltips';
 import Popups from './pages/more/Popups';
@@ -61,6 +66,11 @@ function App() {
             <Route path="/employee/search" element={<SearchEmployee />} />
             
             {/* More Routes */}
+            <Route path="/more/multiple-tabs" element={<MultipleTabs />} />
+            <Route path="/more/menu" element={<Menu />} />
+            <Route path="/more/autocomplete" element={<Autocomplete />} />
+            <Route path="/more/images" element={<Images />} />
+            <Route path="/more/slider" element={<Slider />} />
             <Route path="/more/collapsible" element={<CollapsibleContent />} />
             <Route path="/more/tooltips" element={<Tooltips />} />
             <Route path="/more/popups" element={<Popups />} />
